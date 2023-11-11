@@ -1,0 +1,15 @@
+<form *ngIf="form" [formGroup]="form">
+  <div>
+    <label for="age">Age:</label>
+    <input type="number" name="age" formControlName="age">
+  </div>
+  <div>
+    <label for="agree">Agree:</label>
+    <input type="checkbox" name="agree" formControlName="agree">
+  </div>
+  <div>
+    <label for="comment">Comment:</label>
+    <textarea cols="30" rows="10" name="comment" formControlName="comment"></textarea>
+  </div>
+  <button (click)="submit()">Submit</button>
+</form>

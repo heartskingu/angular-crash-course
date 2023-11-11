@@ -1,0 +1,18 @@
+<app-card *ngIf="selectedCard === 'card1'; else card2"
+  title="Card title 1">
+  <p>My content 1</p>
+</app-card>
+
+<ng-template #card2>
+  <app-card title="Card title 2">
+    <p>My content 2</p>
+  </app-card>
+</ng-template>
+
+<hr>
+
+<ng-template #template1>  
+  <p>Demo template 1</p>
+</ng-template>
+
+<ng-container *ngTemplateOutlet="template1"></ng-container>
