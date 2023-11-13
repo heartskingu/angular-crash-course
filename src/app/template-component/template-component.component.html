@@ -1,18 +1,28 @@
-<app-card *ngIf="selectedCard === 'card1'; else card2"
-  title="Card title 1">
-  <p>My content 1</p>
+<app-card titulo="card 1">
+  <p>May the odds forever be in your favor.</p>
 </app-card>
 
-<ng-template #card2>
-  <app-card title="Card title 2">
-    <p>My content 2</p>
+<!-- <ng-template #card2>
+  <app-card titulo="card 2">
+    <p>May the odds forever be in your favor (or not).</p>
   </app-card>
+</ng-template> -->
+
+
+
+<ng-template #p1>
+  <p>Demo template</p>
 </ng-template>
+
+<app-card #card2 *ngIf="true; else p1" titulo="card 2">
+  <p>May the odds forever be in your favor (or not).</p>
+</app-card>
+
+<!-- <ng-container *ngTemplateOutlet="card2"></ng-container> -->
+
 
 <hr>
 
-<ng-template #template1>  
-  <p>Demo template 1</p>
-</ng-template>
-
-<ng-container *ngTemplateOutlet="template1"></ng-container>
+<ng-container *ngIf="true">
+  <p *ngFor="let text of textArray">{{text}}</p>
+</ng-container>

@@ -1,5 +1,7 @@
-<input type="text" [(ngModel)]="name">
+<input [(ngModel)]="texto" type="text">
 
-<p>{{name | toUppercase}}</p>
+<p>{{texto | toUppercase}}</p>
 
-<button (click)="selfDestroy()">Self destroy button</button>
+<button (click)="emitClick()">Self destroy button</button>
+
+<button (click)="showText()">Show Text</button>

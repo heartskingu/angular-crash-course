@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { FormsModule } from '@angular/forms';
@@ -10,6 +11,7 @@ import { ToUppercasePipe } from './shared/pipes/to-uppercase.pipe';
 import { SimpleComponent } from './simple-component/simple-component.component';
 import { TemplateComponent } from './template-component/template-component.component';
 import { FormSampleModule } from './form-sample/form-sample.module';
+import { PokemonComponent } from './shared/components/pokemon/pokemon.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +20,15 @@ import { FormSampleModule } from './form-sample/form-sample.module';
     ToUppercasePipe,
     AsyncComponent,
     TemplateComponent,
+    PokemonComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     CardModule,
-    FormSampleModule
+    FormSampleModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -5,16 +5,12 @@
   <button (click)="display(4)">4</button>
 </div>
 
-<app-simple-component *ngIf="isRenderingComponent && displaying === 1" 
-  initialName="default"
-  color="lightblue"
-  (selfDestroyAction)="destroyComponent()">
+<app-simple-component [texto]="textoInicio" *ngIf="isRenderingComponent && displaying === 1"
+  (selfDestruction)="destroyComponent()">
 </app-simple-component>
 
-<app-simple-component *ngIf="!isRenderingComponent && displaying === 1" 
-  initialName="You just killed my brother!!!"
-  color="lightgreen"
-  (selfDestroyAction)="destroyComponent()">
+<app-simple-component (selfDestruction)="destroyComponent()" texto="texto 2"
+  *ngIf="!isRenderingComponent && displaying === 1">
 </app-simple-component>
 
 <app-template-component *ngIf="displaying === 2"></app-template-component>

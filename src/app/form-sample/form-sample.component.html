@@ -1,15 +1,13 @@
 <form *ngIf="form" [formGroup]="form">
   <div>
-    <label for="age">Age:</label>
-    <input type="number" name="age" formControlName="age">
+    <label for="pokedexIndex">Pokedex Index:</label>
+    <input type="number" name="pokedexIndex" formControlName="pokemonIndex">
   </div>
   <div>
-    <label for="agree">Agree:</label>
-    <input type="checkbox" name="agree" formControlName="agree">
+    <label for="pokemonName">Pokemon Name:</label>
+    <input type="text" name="pokemonName" formControlName="pokemonName">
   </div>
-  <div>
-    <label for="comment">Comment:</label>
-    <textarea cols="30" rows="10" name="comment" formControlName="comment"></textarea>
-  </div>
-  <button (click)="submit()">Submit</button>
+  <button [disabled]="isLoading" (click)="onSubmit()">Submit</button>
+
+  <p *ngIf="isLoading">Pokemon is loading...</p>
 </form>
